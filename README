@@ -1,0 +1,17 @@
+This is a basic setup of HornetQ on a war file with a Rest interface
+
+To generate the war file:
+mvn clean package
+
+To deploy to tomcat (remember to adjust the "url" item in the tomcat plugin configuration @ pom.xml):
+mvn clean tomcat:redeploy 
+
+entry point: http://server:port/resthornetq/queues/jms.queue.test 
+for example, run:
+	curl -v -X HEAD http://server:port/resthornetq/queues/jms.queue.test
+
+links:
+this project:       http://github.com/bcap/RESTHornetQ
+posting messages:   http://docs.jboss.org/resteasy/hornetq-rest/1.0-beta-1/userguide/html_single/index.html#d0e246
+consuming messages: http://docs.jboss.org/resteasy/hornetq-rest/1.0-beta-1/userguide/html_single/index.html#d0e431
+listening messages: http://docs.jboss.org/resteasy/hornetq-rest/1.0-beta-1/userguide/html_single/index.html#d0e828
